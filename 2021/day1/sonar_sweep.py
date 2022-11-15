@@ -1,21 +1,12 @@
 #!/usr/bin/python3
 
-
-def read_file(file) -> list:
-    """Reads text-file and returns list of integers"""
-
-    file = open(file, "r")
-    lines = [int(line.rstrip("\n")) for line in file]
-    return lines
-
-
 def count_measurements(lines: list) -> int:
     """iterate list of numbers while list lenght is bigger than 2
 
     Return:
         increase: Count of numbers what is increased compared to the previous number of the list.
 
-        decrease: Count of numbers wha is decreased compared to the previous number of the list
+        decrease: Count of numbers what is decreased compared to the previous number of the list
     """
 
     decrease = 0
@@ -35,11 +26,11 @@ def count_measurements(lines: list) -> int:
 
 
 def make_list_of_three_measurements(lines: list) -> list:
-    """Takes the list of numbers as a argument.
+    """
     Iterate through the list and counts three last numbers together and removes last one.
 
     Return:
-        New list of counted measurements
+        New list of measurements
     """
     measurements = []
 
@@ -52,14 +43,17 @@ def make_list_of_three_measurements(lines: list) -> list:
 
 
 def main():
+    try:
+        file = open('day1.txt', "r")
+        lines = [int(line.rstrip("\n")) for line in file]
+        
+        measurements = make_list_of_three_measurements(lines)
 
-    lines = read_file("day1.txt")
-    
-    measurements = make_list_of_three_measurements(lines)
+        increase, decrease = count_measurements(measurements)
 
-    increase, decrease = count_measurements(measurements)
-
-    print(f"Increase: {increase}, Decrease: {decrease} ")
+        print(f"Increase: {increase}, Decrease: {decrease} ")
+    except FileExistsError:
+        print('File not found!')
 
 
 if __name__ == "__main__":
