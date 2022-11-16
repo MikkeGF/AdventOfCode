@@ -25,6 +25,7 @@ def main():
         
     final = calculate(x_position, depth)
     print(f"final asnwer: {final}")
+    file.close()
 
 if __name__ == "__main__":
     main()
