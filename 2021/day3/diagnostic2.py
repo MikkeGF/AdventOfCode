@@ -109,6 +109,7 @@ def main():
 
         print(f'Life support rating:{final}')
         file.close()
+        
     except FileNotFoundError:
         print('File not found!')
 

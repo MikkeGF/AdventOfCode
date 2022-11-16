@@ -6,14 +6,13 @@ def calculate_power_consumption(rates: tuple) -> int:
     Converts "gamma" and "epsilon" binary rates to decimal numbers
 
     Returns:
-        "Amount of "power consuption"
+        "Amount of "power consumption"
     """
     gamma, epsilon = rates
-    print(gamma)
     gamma_rate_decimal = int(gamma, 2)
     epsilon_rate_decimal = int(epsilon, 2)
-    answer = gamma_rate_decimal * epsilon_rate_decimal
-    return answer
+    power_consumption = gamma_rate_decimal * epsilon_rate_decimal
+    return power_consumption
 
 
 def calculate_gamma_epsilon_rate(list_of_bits: list) -> tuple:
@@ -39,7 +38,7 @@ def main():
     
     
     try:
-        file = open("test.txt", "r")
+        file = open("day3.txt", "r")
 
         bits = []
         list_of_bits = []
@@ -53,7 +52,7 @@ def main():
         
         # list what contains sublists (first sublist contains all firts numbers from lines. second contains all 2:nd...etc)
         list_of_bits = [bits[x : x + len(lines)] for x in range(0, len(bits), len(lines))]
-        print(list_of_bits)
+        
         rates = calculate_gamma_epsilon_rate(list_of_bits)
     
         final = calculate_power_consumption(rates)
