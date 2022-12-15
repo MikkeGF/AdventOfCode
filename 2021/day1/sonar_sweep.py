@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def count_measurements(lines: list) -> int:
+def count_measurements(lines: list[str]) -> tuple[int, int]:
     """iterate list of numbers while list lenght is bigger than 2
 
     Return:
@@ -25,20 +25,20 @@ def count_measurements(lines: list) -> int:
     return increase, decrease
 
 
-def make_list_of_three_measurements(lines: list) -> list:
+def make_list_of_three_measurements(lines: list) -> list[int]:
     """
     Iterate through the list and counts three last numbers together and removes last one.
 
     Return:
         New list of measurements
     """
-    measurements = []
+    measurements: list[int]
 
     while len(lines) >= 3:
         last_three = sum(lines[-3:])
         measurements.insert(0, last_three)
         lines.pop()
-
+    print(measurements)
     return measurements
 
 
