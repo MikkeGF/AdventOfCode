@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def calculate(x_position, depth) -> int:
+def calculate(x_position: int, depth: int) -> int:
     """ Calculates final result """
     return x_position * depth
     
@@ -10,7 +10,6 @@ def main():
 
     try:
         file = open('day2.txt', "r")
-
         x_position = 0
         depth = 0
 

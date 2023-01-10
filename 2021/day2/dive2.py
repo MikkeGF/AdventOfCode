@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-def calculate(int1, int2) -> int:
-    return int1 * int2
+def calculate(aim: int, amount:int) -> int:
+    return aim * amount
 
 def main():
     x_position = 0
