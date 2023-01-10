@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+from typing import Tuple
 
-
-def calculate_power_consumption(rates: tuple) -> int:
+def calculate_power_consumption(rates: tuple[str,str]) -> int:
     """
     Converts "gamma" and "epsilon" binary rates to decimal numbers
 
@@ -15,7 +15,7 @@ def calculate_power_consumption(rates: tuple) -> int:
     return power_consumption
 
 
-def calculate_gamma_epsilon_rate(list_of_bits: list) -> tuple:
+def calculate_gamma_epsilon_rate(list_of_bits: list[list]) -> Tuple[str, str]:
     """
     Calculates gamma and epsilon rates. Counts most common bits
 
@@ -43,7 +43,7 @@ def main():
         bits = []
         list_of_bits = []
         lines = [line.rstrip("\n") for line in file]
-
+        
         j = 0
         while j < 12:
             for i in range(0, len(lines)):

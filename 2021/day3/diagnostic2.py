@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def to_decimal(data:list)-> int:
+def to_decimal(data:list) -> int:
     """
     Takes list of bits 
     Example: [1 0 1 1 0 1 0 1 1 0 1 0]
